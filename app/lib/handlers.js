@@ -342,6 +342,7 @@ _data.read('users',emailId,function(err,data)
 	{
 		//Hash the password
 		var hashedPassword = helpers.hash(password);
+		//console.log(hashedPassword);
 		if(hashedPassword){
 		//Create the user object
 		var userObject = {
@@ -629,6 +630,7 @@ if(emailId && password) {
 						callback(200,tokenObject);
 					}else{
 						callback(500,{'Error':'Could not create the new token'});
+						console.log(err);
 					}
 				})
 
